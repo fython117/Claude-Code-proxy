@@ -95,7 +95,7 @@ python proxy.py
 ```bash
 set ANTHROPIC_BASE_URL=http://127.0.0.1:5000
 set ANTHROPIC_AUTH_TOKEN=dummy
-set ANTHROPIC_MODEL=claude-3-opus-20240229
+set ANTHROPIC_MODEL=mistralai/mistral-nemotron
 claude
 ```
 
@@ -103,7 +103,7 @@ claude
 ```bash
 $env:ANTHROPIC_BASE_URL="http://127.0.0.1:5000"
 $env:ANTHROPIC_AUTH_TOKEN="dummy"
-$env:ANTHROPIC_MODEL="claude-3-opus-20240229"
+$env:ANTHROPIC_MODEL="mistralai/mistral-nemotron"
 claude
 ```
 
@@ -111,7 +111,7 @@ claude
 ```bash
 export ANTHROPIC_BASE_URL=http://127.0.0.1:5000
 export ANTHROPIC_AUTH_TOKEN=dummy
-export ANTHROPIC_MODEL=claude-3-opus-20240229
+export ANTHROPIC_MODEL=mistralai/mistral-nemotron
 claude
 ```
 
