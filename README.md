@@ -1,23 +1,107 @@
-# Claude Code NVIDIA Proxy
+# 🚀 Claude Code NVIDIA Proxy
 
-让 Claude Code 使用 NVIDIA 提供的免费 API 来运行，替代 Anthropic 付费模型。
+<div align="center">
 
-## 功能特点
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://python.org)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com)
+[![Status](https://img.shields.io/badge/status-stable-brightgreen)](https://github.com)
 
-- 将 Claude Code 的 Anthropic API 请求转换为 OpenAI 格式，转发到 NVIDIA
-- 使用 NVIDIA 免费的 Mistral-Nemotron 模型，零成本运行 Claude Code
-- 支持流式响应，保持原生的交互体验
-- 自动伪装模型信息，Claude Code 无需任何修改
+**Run Claude Code for free using NVIDIA's API**  
+*Zero Anthropic costs. Full Claude Code experience.*
 
-## 快速开始
+</div>
 
-1. 克隆本项目
-2. 确保你有 NVIDIA API Key（免费申请：build.nvidia.com）
-3. 修改脚本中的 `NVIDIA_API_KEY` 和 `NVIDIA_MODEL`
-4. 运行代理：`python proxy.py`
-5. 设置环境变量后启动 Claude Code
+---
 
-```bash
+## 📖 Overview
+
+This proxy server acts as a bridge between [Claude Code](https://github.com/anthropics/claude-code) and NVIDIA's free API. It transparently converts Anthropic API requests to OpenAI format, allowing you to use NVIDIA's Mistral-Nemotron model (or any other NVIDIA-hosted model) as a drop-in replacement for Claude's paid models.
+
+**Why this project?**  
+- 💰 **Zero Cost** - NVIDIA offers free API access for development
+- 🚀 **Full Compatibility** - Works with Claude Code without any modifications
+- ⚡ **High Performance** - Streaming responses, low latency
+- 🔧 **Easy Setup** - Single script, minimal configuration
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔄 **Protocol Conversion** | Automatically converts Anthropic ↔ OpenAI API formats |
+| 🌊 **Streaming Support** | Full SSE streaming for real-time responses |
+| 🎭 **Model Masking** | Makes NVIDIA models appear as Claude models to Claude Code |
+| 🔌 **Plug & Play** | No changes needed to Claude Code |
+| 📝 **Request Logging** | Debug mode for troubleshooting |
+| ⚙️ **Flexible Configuration** | Environment variables or inline configuration |
+
+---
+
+## 🎯 Supported Models
+
+The proxy works with any NVIDIA-hosted model. Recommended models:
+
+| Model | Provider | Best For |
+|-------|----------|----------|
+| `mistralai/mistral-nemotron` | Mistral AI + NVIDIA | General purpose, coding |
+| `meta/llama-3.1-70b-instruct` | Meta | Complex reasoning |
+| `google/gemma-2-27b-it` | DeepMind | Fast responses |
+| `microsoft/phi-3-mini-128k-instruct` | Microsoft | Lightweight tasks |
+
+---
+
+## 📋 Prerequisites
+
+- **Python 3.8+** - [Download](https://python.org/downloads/)
+- **Claude Code** - [Installation guide](https://github.com/anthropics/claude-code)
+- **NVIDIA API Key** - Free at [build.nvidia.com](https://build.nvidia.com)
+
+> 💡 **Getting a NVIDIA API Key**: Register at build.nvidia.com, navigate to any model, click "Get API Key" - it's completely free!
+
+---
+
+## 🔧 how to use
+
+### 1. Clone the repository
+
+bash
+git clone https://github.com/yourusername/claude-code-nvidia-proxy.git
+cd claude-code-nvidia-proxy
+
+### 2. Install dependencies
+
+bash
+pip install -r requirements.txt
+
+### 3. Configure your API key
+
+NVIDIA_API_KEY = "nvapi-your-key-here"
+NVIDIA_MODEL = "mistralai/mistral-nemotron"
+
+## 🚀 Start
+
+bash
+python proxy.py
+
+### Windows (CMD):
 set ANTHROPIC_BASE_URL=http://127.0.0.1:5000
 set ANTHROPIC_AUTH_TOKEN=dummy
+set ANTHROPIC_MODEL=claude-3-opus-20240229
 claude
+
+### Windows (PowerShell):
+$env:ANTHROPIC_BASE_URL="http://127.0.0.1:5000"
+$env:ANTHROPIC_AUTH_TOKEN="dummy"
+$env:ANTHROPIC_MODEL="claude-3-opus-20240229"
+claude
+
+### macOS/Linux:
+export ANTHROPIC_BASE_URL=http://127.0.0.1:5000
+export ANTHROPIC_AUTH_TOKEN=dummy
+export ANTHROPIC_MODEL=claude-3-opus-20240229
+claude
+
+Claude Code will now use NVIDIA's free API. You can verify this by asking:
+What model are you running on?
