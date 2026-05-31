@@ -239,7 +239,7 @@ def models():
             {
                 "id": NVIDIA_MODEL,
                 "type": "model",
-                "display_name": "Mistral Nemotron",
+                "display_name": NVIDIA_MODEL,
                 "created_at": int(time.time())
             }
         ]
@@ -262,7 +262,7 @@ if __name__ == "__main__":
     print("1. 在 Claude Code 终端设置环境变量:")
     print("   set ANTHROPIC_BASE_URL=http://127.0.0.1:5000")
     print("   set ANTHROPIC_AUTH_TOKEN=dummy")
-    print("   set ANTHROPIC_MODEL=mistralai/mistral-nemotron")
+    print(f"   set ANTHROPIC_MODEL={NVIDIA_MODEL}")
     print("   claude")
     print("=" * 60)
     print("\n代理已启动，等待连接...\n")
