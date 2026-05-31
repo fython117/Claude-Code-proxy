@@ -262,7 +262,7 @@ if __name__ == "__main__":
     print("1. 在 Claude Code 终端设置环境变量:")
     print("   set ANTHROPIC_BASE_URL=http://127.0.0.1:5000")
     print("   set ANTHROPIC_AUTH_TOKEN=dummy")
-    print("   set ANTHROPIC_MODEL=claude-3-opus-20240229")
+    print("   set ANTHROPIC_MODEL=mistralai/mistral-nemotron")
     print("   claude")
     print("=" * 60)
     print("\n代理已启动，等待连接...\n")
