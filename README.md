@@ -93,7 +93,7 @@ NVIDIA_MODEL = "mistralai/mistral-nemotron"
 @echo off
 
 :: 1. 新开一个CMD窗口，运行代理
-start "Claude_Code_proxy.py" cmd /k "py -3.10 Claude_Code_proxy.py"
+start "Claude-Code-proxy.py" cmd /k "py -3.10 Claude-Code-proxy.py"
 
 :: 2. 等待 0.3 秒（精确延迟）
 ping -n 1 -w 300 127.0.0.1 >nul
