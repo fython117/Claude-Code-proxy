@@ -87,11 +87,33 @@ NVIDIA_MODEL = "mistralai/mistral-nemotron"
 
 ## 🚀 Start
 
+### One-click launch with .bat (Recommended)
+
+```
+@echo off
+
+:: 1. 新开一个CMD窗口，运行代理
+start "Claude_Code_proxy.py" cmd /k "py -3.10 Claude_Code_proxy.py"
+
+:: 2. 等待 0.3 秒（精确延迟）
+ping -n 1 -w 300 127.0.0.1 >nul
+
+:: 3. 本窗口设置环境变量并启动 claude
+set ANTHROPIC_BASE_URL=http://127.0.0.1:5000
+set ANTHROPIC_AUTH_TOKEN=dummy
+set ANTHROPIC_MODEL=mistralai/mistral-nemotron
+claude
+
+pause
+```
+
+### Or Use the Command Line
+
 ```bash
 python proxy.py
 ```
 
-### Windows (CMD):
+#### Windows (CMD):
 ```bash
 set ANTHROPIC_BASE_URL=http://127.0.0.1:5000
 set ANTHROPIC_AUTH_TOKEN=dummy
@@ -99,7 +121,7 @@ set ANTHROPIC_MODEL=mistralai/mistral-nemotron
 claude
 ```
 
-### Windows (PowerShell):
+#### Windows (PowerShell):
 ```bash
 $env:ANTHROPIC_BASE_URL="http://127.0.0.1:5000"
 $env:ANTHROPIC_AUTH_TOKEN="dummy"
@@ -107,7 +129,7 @@ $env:ANTHROPIC_MODEL="mistralai/mistral-nemotron"
 claude
 ```
 
-### macOS/Linux:
+#### macOS/Linux:
 ```bash
 export ANTHROPIC_BASE_URL=http://127.0.0.1:5000
 export ANTHROPIC_AUTH_TOKEN=dummy
