@@ -68,8 +68,8 @@ The proxy works with any NVIDIA-hosted model. Recommended models:
 
 ```
 bash
-git clone https://github.com/yourusername/claude-code-nvidia-proxy.git
-cd claude-code-nvidia-proxy
+git clone https://github.com/L1-sec/Claude-Code-proxy.git
+cd Claude-Code-proxy
 ```
 
 ### 2. Install dependencies
